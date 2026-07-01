@@ -13,6 +13,15 @@
 </head>
 <body>
 
+<!-- ===================== PROMO BANNER ===================== -->
+<!-- To activate: set PROMO_ACTIVE = true in js/main.js and update the message below -->
+<div class="promo-banner" id="promoBanner" aria-live="polite" hidden>
+    <p class="promo-text">
+        🎉 <strong>Limited Offer:</strong> Get 20% off your first website project — <a href="#contact" class="promo-link">Claim it now</a>
+    </p>
+    <button class="promo-close" id="promoClose" aria-label="Close promotion banner">✕</button>
+</div>
+
 <!-- ===================== NAVBAR ===================== -->
 <header class="header" id="header">
     <nav class="navbar container">
@@ -27,6 +36,7 @@
             <li><a href="#services"   class="nav-link">Services</a></li>
             <li><a href="#about"      class="nav-link">About</a></li>
             <li><a href="#portfolio"  class="nav-link">Portfolio</a></li>
+            <li><a href="#pricing"    class="nav-link">Pricing</a></li>
             <li><a href="#blog"       class="nav-link">Blog</a></li>
             <li><a href="#contact"    class="nav-link">Contact</a></li>
         </ul>
@@ -44,7 +54,7 @@
     <div class="hero-content container">
         <div class="hero-text">
             <span class="hero-badge reveal-up">
-                <span class="badge-line"></span>Best Digital Solution Provider
+                Web | Software | Innovation
             </span>
             <h1 class="reveal-up">Crafting Digital Experiences<br>That <span class="text-orange">Drive Results</span></h1>
             <p class="reveal-up">Premium web development services for businesses that demand excellence. We transform ideas into pixel-perfect, high-performance digital products.</p>
@@ -60,80 +70,114 @@
 </section>
 
 <!-- ===================== SERVICES ===================== -->
-<section class="section-white" id="services">
+<section class="section-light" id="services">
     <div class="container">
         <div class="section-head center reveal-up">
             <span class="section-tag">Our Services</span>
-            <h2>Exclusive Digital Services</h2>
+            <h2>What We Do Best</h2>
+            <p class="section-desc">Comprehensive web development services tailored to your business needs.</p>
         </div>
-        <div class="services-list">
+        <div class="services-grid">
 
-            <div class="service-row reveal-up">
-                <div class="service-info">
-                    <div class="srv-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-                        </svg>
-                    </div>
-                    <div class="srv-body">
-                        <h3>Web Development</h3>
-                        <p>Responsive, high-performance websites and web apps tailored to your business — from CMS builds to full-stack custom solutions that scale.</p>
-                        <ul class="srv-list">
-                            <li>Custom CMS &amp; E-Commerce Builds</li>
-                            <li>Progressive Web Apps (PWA)</li>
-                            <li>Full-Stack Custom Solutions</li>
-                        </ul>
-                        <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
+            <div class="service-card reveal-up">
                 <div class="service-thumb">
-                    <img src="img/hero/2.jpg" alt="Web Development">
+                    <img src="img/services/web.webp" alt="Web Development" loading="lazy" decoding="async">
+                </div>
+                <div class="service-card-body">
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with modern technologies. From simple landing pages to complex web platforms.</p>
+                    <ul class="srv-list">
+                        <li>Responsive Design</li>
+                        <li>Custom CMS Solutions</li>
+                        <li>E-commerce Platforms</li>
+                        <li>Progressive Web Apps</li>
+                    </ul>
+                    <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
 
-            <div class="service-row reveal-up" style="--delay:.1s">
-                <div class="service-info">
-                    <div class="srv-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-                        </svg>
-                    </div>
-                    <div class="srv-body">
-                        <h3>SEO &amp; Digital Marketing</h3>
-                        <p>Data-driven strategies that improve your visibility, drive organic traffic, and grow your revenue — measurable results from day one.</p>
-                        <ul class="srv-list">
-                            <li>Technical SEO Audits &amp; On-Page</li>
-                            <li>Content Strategy &amp; Marketing</li>
-                            <li>Analytics, Reporting &amp; Growth</li>
-                        </ul>
-                        <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
+            <div class="service-card reveal-up" style="--delay:.08s">
                 <div class="service-thumb">
-                    <img src="img/hero/3.jpg" alt="SEO & Digital Marketing">
+                    <img src="img/services/ui.webp" alt="UI/UX Design" loading="lazy" decoding="async">
+                </div>
+                <div class="service-card-body">
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive interfaces designed to delight users and drive engagement. We create experiences that users love.</p>
+                    <ul class="srv-list">
+                        <li>User Research</li>
+                        <li>Wireframing &amp; Prototyping</li>
+                        <li>Visual Design</li>
+                        <li>Usability Testing</li>
+                    </ul>
+                    <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
 
-            <div class="service-row reveal-up" style="--delay:.2s">
-                <div class="service-info">
-                    <div class="srv-icon-wrap">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
-                        </svg>
-                    </div>
-                    <div class="srv-body">
-                        <h3>UI/UX &amp; App Development</h3>
-                        <p>Beautiful, intuitive interfaces and native-quality app experiences — designed user-first and engineered to perform across every device.</p>
-                        <ul class="srv-list">
-                            <li>User Research &amp; Prototyping</li>
-                            <li>Figma Design Systems</li>
-                            <li>Cross-Platform App Development</li>
-                        </ul>
-                        <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
+            <div class="service-card reveal-up" style="--delay:.16s">
                 <div class="service-thumb">
-                    <img src="img/hero/4.jpg" alt="UI/UX & App Development">
+                    <img src="img/services/perfomance.webp" alt="Performance Optimization" loading="lazy" decoding="async">
+                </div>
+                <div class="service-card-body">
+                    <h3>Performance Optimization</h3>
+                    <p>Speed matters. We optimize every aspect of your website for blazing-fast load times and smooth performance.</p>
+                    <ul class="srv-list">
+                        <li>Code Optimization</li>
+                        <li>Asset Compression</li>
+                        <li>Caching Strategies</li>
+                        <li>Core Web Vitals</li>
+                    </ul>
+                    <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:.08s">
+                <div class="service-thumb">
+                    <img src="img/services/maintenance.webp" alt="Maintenance & Support" loading="lazy" decoding="async">
+                </div>
+                <div class="service-card-body">
+                    <h3>Maintenance &amp; Support</h3>
+                    <p>Ongoing maintenance and support to keep your website running smoothly. We're here when you need us.</p>
+                    <ul class="srv-list">
+                        <li>Regular Updates</li>
+                        <li>Security Monitoring</li>
+                        <li>Bug Fixes</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:.16s">
+                <div class="service-thumb">
+                    <img src="img/services/seo.webp" alt="SEO & Marketing" loading="lazy" decoding="async">
+                </div>
+                <div class="service-card-body">
+                    <h3>SEO &amp; Marketing</h3>
+                    <p>Get found online. We implement SEO best practices and marketing strategies to help your business grow.</p>
+                    <ul class="srv-list">
+                        <li>Technical SEO</li>
+                        <li>Content Strategy</li>
+                        <li>Analytics Setup</li>
+                        <li>Conversion Optimization</li>
+                    </ul>
+                    <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+
+            <div class="service-card reveal-up" style="--delay:.24s">
+                <div class="service-thumb">
+                    <img src="img/services/api.webp" alt="API Development" loading="lazy" decoding="async">
+                </div>
+                <div class="service-card-body">
+                    <h3>API Development</h3>
+                    <p>Robust, scalable APIs that power your applications. RESTful and GraphQL solutions built to your specifications.</p>
+                    <ul class="srv-list">
+                        <li>RESTful APIs</li>
+                        <li>GraphQL Implementation</li>
+                        <li>Third-party Integrations</li>
+                        <li>API Documentation</li>
+                    </ul>
+                    <a href="#contact" class="read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
 
@@ -156,29 +200,10 @@
             </div>
             <!-- Content -->
             <div class="about-content reveal-right">
-                <span class="section-tag">About Company</span>
-                <h2>Customized Solutions to Meet Client <span class="text-orange">Needs.</span></h2>
-                <p>At Webify, we believe a great digital product is more than code — it's the face of your brand online. For over 4 years, our team of passionate developers and designers in Johannesburg has been building experiences that captivate, convert, and scale.</p>
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="af-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                        </div>
-                        <div>
-                            <strong>Performance First</strong>
-                            <span>Sub-2s load times, 99+ Lighthouse scores</span>
-                        </div>
-                    </div>
-                    <div class="about-feature">
-                        <div class="af-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div>
-                            <strong>Security &amp; Reliability</strong>
-                            <span>Enterprise-grade security on every project</span>
-                        </div>
-                    </div>
-                </div>
+                <span class="section-tag">About Us</span>
+                <h2>Building The Future, One Line At A Time</h2>
+                <p>At Webify, we don't just build websites, we create digital experiences that captivate, engage, and convert. With over 4 years of experience in the industry, we've helped businesses of all sizes establish their online presence and achieve their goals.</p>
+                <p>Our approach combines cutting-edge technology with timeless design principles. We're obsessed with details, performance, and user experience. Every project we take on is treated as a unique opportunity to push boundaries and deliver something extraordinary.</p>
                 <ul class="about-list">
                     <li>4+ Years of industry experience</li>
                     <li>50+ successful projects delivered</li>
@@ -191,30 +216,63 @@
     </div>
 </section>
 
-<!-- ===================== STATS ===================== -->
-<section class="stats-bar">
-    <div class="container stats-grid">
-        <div class="stat-item reveal-up">
-            <h3><span class="count" data-target="50">0</span>+</h3>
-            <p>Projects Completed</p>
+<!-- ===================== TECH STACK ===================== -->
+<section class="section-light" id="tech-stack">
+    <div class="container">
+        <div class="section-head center reveal-up">
+            <span class="section-tag">What We Use</span>
+            <h2>Our Technology Stack</h2>
+            <p class="section-desc">The modern tools and frameworks we use to build fast, scalable, and reliable digital products.</p>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item reveal-up" style="--delay:.1s">
-            <h3><span class="count" data-target="100">0</span>%</h3>
-            <p>Client Satisfaction</p>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item reveal-up" style="--delay:.2s">
-            <h3><span class="count" data-target="4">0</span>+</h3>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item reveal-up" style="--delay:.3s">
-            <h3><span class="count" data-target="24">0</span>/7</h3>
-            <p>Support Available</p>
+        <div class="stack-grid reveal-up">
+            <div class="stack-group">
+                <h4 class="stack-label">MERN Stack</h4>
+                <div class="tech-icons-row">
+                    <div class="ti" title="MongoDB"><img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" loading="lazy"><span>MongoDB</span></div>
+                    <div class="ti" title="Express"><img src="https://skillicons.dev/icons?i=express" alt="Express" loading="lazy"><span>Express</span></div>
+                    <div class="ti" title="React"><img src="https://skillicons.dev/icons?i=react" alt="React" loading="lazy"><span>React</span></div>
+                    <div class="ti" title="Node.js"><img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" loading="lazy"><span>Node</span></div>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h4 class="stack-label">Frontend</h4>
+                <div class="tech-icons-row">
+                    <div class="ti" title="HTML5"><img src="https://skillicons.dev/icons?i=html" alt="HTML5" loading="lazy"><span>HTML5</span></div>
+                    <div class="ti" title="CSS3"><img src="https://skillicons.dev/icons?i=css" alt="CSS3" loading="lazy"><span>CSS3</span></div>
+                    <div class="ti" title="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript" loading="lazy"><span>JS</span></div>
+                    <div class="ti" title="TypeScript"><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" loading="lazy"><span>TS</span></div>
+                    <div class="ti" title="Tailwind"><img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind" loading="lazy"><span>Tailwind</span></div>
+                    <div class="ti" title="Next.js"><img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" loading="lazy"><span>Next</span></div>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h4 class="stack-label">Backend &amp; Database</h4>
+                <div class="tech-icons-row">
+                    <div class="ti" title="Python"><img src="https://skillicons.dev/icons?i=python" alt="Python" loading="lazy"><span>Python</span></div>
+                    <div class="ti" title="C"><img src="https://skillicons.dev/icons?i=c" alt="C" loading="lazy"><span>C</span></div>
+                    <div class="ti" title="MySQL"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" loading="lazy"><span>MySQL</span></div>
+                    <div class="ti" title="PostgreSQL"><img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" loading="lazy"><span>Postgres</span></div>
+                    <div class="ti" title="Supabase"><img src="https://skillicons.dev/icons?i=supabase" alt="Supabase" loading="lazy"><span>Supabase</span></div>
+                    <div class="ti" title="Firebase"><img src="https://skillicons.dev/icons?i=firebase" alt="Firebase" loading="lazy"><span>Firebase</span></div>
+                </div>
+            </div>
+            <div class="stack-group">
+                <h4 class="stack-label">Automation &amp; DevOps</h4>
+                <div class="tech-icons-row">
+                    <div class="ti" title="Git"><img src="https://skillicons.dev/icons?i=git" alt="Git" loading="lazy"><span>Git</span></div>
+                    <div class="ti" title="GitHub"><img src="https://skillicons.dev/icons?i=github" alt="GitHub" loading="lazy"><span>GitHub</span></div>
+                    <div class="ti" title="GitHub Actions"><img src="https://skillicons.dev/icons?i=githubactions" alt="GitHub Actions" loading="lazy"><span>Actions</span></div>
+                    <div class="ti" title="Docker"><img src="https://skillicons.dev/icons?i=docker" alt="Docker" loading="lazy"><span>Docker</span></div>
+                    <div class="ti" title="Linux"><img src="https://skillicons.dev/icons?i=linux" alt="Linux" loading="lazy"><span>Linux</span></div>
+                    <div class="ti" title="Bash"><img src="https://skillicons.dev/icons?i=bash" alt="Bash" loading="lazy"><span>Bash</span></div>
+                    <div class="ti" title="VS Code"><img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" loading="lazy"><span>VS Code</span></div>
+                    <div class="ti" title="Figma"><img src="https://skillicons.dev/icons?i=figma" alt="Figma" loading="lazy"><span>Figma</span></div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 
 <!-- ===================== PORTFOLIO ===================== -->
 <section class="section-dark" id="portfolio">

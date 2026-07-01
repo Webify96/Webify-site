@@ -2,6 +2,22 @@
    main.js — Webify
    ============================================================ */
 
+/* ---- Promo banner ---- */
+/* Set to true when you have an active promotion, false to hide it */
+const PROMO_ACTIVE = false;
+
+(function () {
+    const banner = document.getElementById('promoBanner');
+    if (!banner) return;
+    if (PROMO_ACTIVE && !sessionStorage.getItem('promoDismissed')) {
+        banner.removeAttribute('hidden');
+    }
+    document.getElementById('promoClose')?.addEventListener('click', () => {
+        banner.setAttribute('hidden', '');
+        sessionStorage.setItem('promoDismissed', '1');
+    });
+})();
+
 /* ---- Sticky header shadow ---- */
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
