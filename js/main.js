@@ -159,6 +159,10 @@ if (newsletterForm) {
     });
 }
 
+/* ---- Copyright year ---- */
+const yearEl = document.getElementById('copyrightYear');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 /* ---- Client logo lightbox ---- */
 (function () {
     const lightbox  = document.getElementById('lightbox');
