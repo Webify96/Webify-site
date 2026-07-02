@@ -18,6 +18,18 @@ const PROMO_ACTIVE = false;
     });
 })();
 
+/* ---- Tech stack marquee auto-fill ---- */
+window.addEventListener('load', () => {
+    document.querySelectorAll('.stack-marquee').forEach(marquee => {
+        const needed = window.innerWidth * 2.5;
+        while (marquee.scrollWidth < needed) {
+            [...marquee.children].forEach(child => {
+                marquee.appendChild(child.cloneNode(true));
+            });
+        }
+    });
+});
+
 /* ---- Sticky header shadow ---- */
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
@@ -146,3 +158,31 @@ if (newsletterForm) {
         }, 2500);
     });
 }
+
+/* ---- Client logo lightbox ---- */
+(function () {
+    const lightbox  = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lightboxImg');
+    const lbClose   = document.getElementById('lightboxClose');
+    const lbBackdrop = document.getElementById('lightboxBackdrop');
+    if (!lightbox) return;
+
+    function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lightbox.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightbox.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+    }
+
+    document.querySelectorAll('.client-logo[data-logo]').forEach(el => {
+        el.addEventListener('click', () => openLightbox(el.dataset.logo, el.dataset.alt));
+    });
+    lbClose.addEventListener('click', closeLightbox);
+    lbBackdrop.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+})();

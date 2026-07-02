@@ -352,7 +352,7 @@ input,textarea,select { font-family:inherit; }
 .diamond-cell img { width:100%; height:100%; object-fit:cover; transform:rotate(-45deg) scale(1.55); transition:.5s ease; }
 .diamond-cell:hover img { transform:rotate(-45deg) scale(1.65); }
 .about-content h2 { margin-bottom:16px; }
-.about-content h2 code { font-family:'Courier New', monospace; color:var(--iris); background:var(--iris-subtle); padding:2px 8px; border-radius:6px; font-size:.9em; }
+.about-content h2 code { font-family:'Courier New', monospace; color:#000; background:rgba(0,0,0,.07); padding:2px 8px; border-radius:6px; font-size:.9em; }
 .about-content > p { font-size:.95rem; color:var(--text-2); line-height:1.8; margin-bottom:28px; }
 .about-features { display:flex; flex-direction:column; gap:16px; margin-bottom:24px; }
 .about-feature {
@@ -366,11 +366,12 @@ input,textarea,select { font-family:inherit; }
 .tech-stack-img { display:block; max-width:100%; height:auto; }
 .about-feature span  { font-size:.82rem; color:var(--text-2); }
 /* Tech Stack section */
-.stack-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:32px; margin-top:48px; }
-.stack-group { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; }
-.stack-label { font-family:var(--font-h); font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--iris); margin-bottom:16px; }
+.stack-logos { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:48px 64px; margin-top:56px; }
+.stack-logo-item { display:flex; flex-direction:column; align-items:center; gap:14px; transition:var(--trans); }
+.stack-logo-item:hover { transform:translateY(-4px); }
+.stack-logo-item img { width:80px; height:80px; object-fit:contain; display:block; }
+.stack-logo-item span { font-size:.88rem; font-weight:600; color:var(--text-2); font-family:var(--font-h); }
 .tech-icons-row { display:flex; flex-wrap:wrap; gap:8px; }
-@media(max-width:600px){ .stack-grid{ grid-template-columns:1fr; } }
 .ti {
     display:flex; flex-direction:column; align-items:center; gap:5px;
     background:var(--white); border:1px solid var(--border);
@@ -423,6 +424,16 @@ input,textarea,select { font-family:inherit; }
 }
 .client-logo:hover { filter:grayscale(0%); opacity:1; border-color:var(--iris-l); }
 .client-logo img { height:80px; width:auto; max-width:200px; object-fit:contain; display:block; }
+.client-logo { cursor:pointer; }
+
+/* ---- Lightbox ---- */
+.lightbox { position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; }
+.lightbox[hidden] { display:none; }
+.lightbox-backdrop { position:absolute; inset:0; background:rgba(0,0,0,.75); backdrop-filter:blur(4px); cursor:pointer; }
+.lightbox-content { position:relative; z-index:1; background:var(--white); border-radius:var(--radius-lg); padding:32px; max-width:min(480px,90vw); width:100%; display:flex; align-items:center; justify-content:center; box-shadow:0 24px 80px rgba(0,0,0,.4); }
+.lightbox-content img { max-width:100%; max-height:60vh; object-fit:contain; display:block; }
+.lightbox-close { position:absolute; top:12px; right:14px; background:none; border:none; font-size:1.4rem; line-height:1; color:var(--text-3); cursor:pointer; padding:4px 8px; border-radius:6px; transition:var(--trans); }
+.lightbox-close:hover { background:var(--border); color:var(--text-1); }
 
 /* ============================================================
    PORTFOLIO
