@@ -776,8 +776,11 @@ input,textarea,select { font-family:inherit; }
     .navbar             { height:80px; }
     .logo-img           { height:70px; }
 
-    .about-grid         { grid-template-columns:1fr; gap:48px; }
-    .diamond-wrap       { display:none; }
+    .about-grid         { grid-template-columns:1fr; gap:40px; }
+    .diamond-wrap       { display:flex; padding:0; }
+    .diamond-grid       { transform:none; width:100%; height:260px; gap:8px; }
+    .diamond-cell img   { transform:none; object-fit:cover; }
+    .diamond-cell:hover img { transform:scale(1.05); }
     .stats-grid         { grid-template-columns:repeat(2,1fr); gap:2px; }
     .stat-divider       { display:none; }
     .clients-showcase   { grid-template-columns:repeat(2,1fr); gap:20px; } /* 2×2 on tablet */
