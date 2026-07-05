@@ -127,20 +127,31 @@ document.querySelectorAll('.faq-item').forEach(item => {
     });
 });
 
-/* ---- Contact form ---- */
+/* ---- Contact form (Formspree) ---- */
 const contactForm = document.getElementById('contactForm');
 const formOk      = document.getElementById('formOk');
 if (contactForm && formOk) {
-    contactForm.addEventListener('submit', e => {
+    contactForm.addEventListener('submit', async e => {
         e.preventDefault();
         const btnTxt = contactForm.querySelector('.btn-txt');
         if (btnTxt) btnTxt.textContent = 'Sending…';
-        setTimeout(() => {
-            if (btnTxt) btnTxt.textContent = 'Send Message';
-            formOk.style.display = 'block';
-            contactForm.reset();
-            setTimeout(() => { formOk.style.display = 'none'; }, 6000);
-        }, 1200);
+        try {
+            const res = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                if (btnTxt) btnTxt.textContent = 'Send Message';
+                formOk.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => { formOk.style.display = 'none'; }, 6000);
+            } else {
+                if (btnTxt) btnTxt.textContent = 'Try Again';
+            }
+        } catch {
+            if (btnTxt) btnTxt.textContent = 'Try Again';
+        }
     });
 }
 
