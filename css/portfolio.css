@@ -112,13 +112,38 @@
     }
     .portfolio-featured { grid-column: 1; }
     .portfolio-featured .portfolio-overlay { opacity: 1; }
+
+    /* Screenshots carry their own baked-in text, so the overlay needs a
+       solid backdrop (not just a soft gradient) behind our own copy or
+       the two sets of text visually collide. Selector must match the
+       specificity of the always-on `.portfolio-featured .portfolio-overlay`
+       rule above, or that rule wins regardless of this media query. */
+    .portfolio-overlay,
+    .portfolio-featured .portfolio-overlay {
+        padding: 24px;
+        background: linear-gradient(to top,
+            rgba(4,3,18,.98) 0%,
+            rgba(4,3,18,.98) 58%,
+            rgba(4,3,18,.65) 78%,
+            transparent 100%);
+    }
+    .portfolio-overlay h3 { text-shadow: none; }
 }
 
 @media(max-width: 480px) {
     .portfolio-grid {
         grid-template-rows: 320px 300px 280px 280px;
     }
-    .portfolio-overlay { opacity: 1; }
+    .portfolio-overlay,
+    .portfolio-featured .portfolio-overlay {
+        opacity: 1;
+        padding: 20px;
+        background: linear-gradient(to top,
+            rgba(4,3,18,.98) 0%,
+            rgba(4,3,18,.98) 65%,
+            rgba(4,3,18,.7) 82%,
+            transparent 100%);
+    }
     .portfolio-overlay h3 { font-size: .95rem; }
     .portfolio-featured .portfolio-overlay h3 { font-size: 1.3rem; }
 }
