@@ -781,8 +781,8 @@ input,textarea,select { font-family:inherit; }
     .logo-img           { height:70px; }
 
     .about-grid         { grid-template-columns:1fr; gap:40px; }
-    .diamond-wrap       { display:flex; padding:0; }
-    .diamond-grid       { transform:none; width:100%; height:260px; gap:8px; }
+    .diamond-wrap       { display:flex; padding:0; justify-content:center; }
+    .diamond-grid       { transform:none; width:100%; max-width:420px; aspect-ratio:1; height:auto; gap:16px; margin:0 auto; }
     .diamond-cell img   { transform:none; object-fit:cover; }
     .diamond-cell:hover img { transform:scale(1.05); }
     .stats-grid         { grid-template-columns:repeat(2,1fr); gap:2px; }
