@@ -127,7 +127,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     });
 });
 
-/* ---- Contact form (Formspree) ---- */
+/* ---- Contact form (Resend) ---- */
 const contactForm = document.getElementById('contactForm');
 const formOk      = document.getElementById('formOk');
 if (contactForm && formOk) {
@@ -136,10 +136,11 @@ if (contactForm && formOk) {
         const btnTxt = contactForm.querySelector('.btn-txt');
         if (btnTxt) btnTxt.textContent = 'Sending…';
         try {
+            const data = Object.fromEntries(new FormData(contactForm));
             const res = await fetch(contactForm.action, {
                 method: 'POST',
-                body: new FormData(contactForm),
-                headers: { 'Accept': 'application/json' }
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
             });
             if (res.ok) {
                 if (btnTxt) btnTxt.textContent = 'Send Message';
