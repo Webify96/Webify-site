@@ -399,6 +399,15 @@ input,textarea,select { font-family:inherit; }
 .about-list li { font-size:.9rem; color:var(--text-2); padding-left:22px; position:relative; }
 .about-list li::before { content:'✓'; position:absolute; left:0; color:var(--iris); font-weight:700; }
 
+/* Areas served */
+.area-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; max-width:900px; margin:0 auto; }
+.area-tag {
+    font-size:.85rem; font-weight:600; color:var(--iris-d);
+    background:var(--iris-subtle); border:1px solid var(--iris-subtle3);
+    padding:8px 18px; border-radius:999px; transition:var(--trans);
+}
+.area-tag:hover { background:var(--iris-grad); color:#fff; border-color:transparent; }
+
 /* ============================================================
    STATS BAR — iris/violet gradient
    ============================================================ */
