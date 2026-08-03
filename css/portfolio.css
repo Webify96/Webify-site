@@ -3,150 +3,225 @@
    ============================================================ */
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 520px 520px 560px;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 520px 520px 560px;
+  gap: 20px;
 }
 
 /* Websites span full width */
 .portfolio-featured {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 /* UI design cards (03 & 04) auto-place side by side in row 3 */
 
 /* Base card */
 .portfolio-card {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    background: var(--dark-3);
-    cursor: pointer;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--dark-3);
+  cursor: pointer;
 }
 
 .portfolio-card img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    transition: transform .7s cubic-bezier(.25,.46,.45,.94), filter .7s ease;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition:
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.7s ease;
 }
-.portfolio-card:hover img { transform: scale(1.03); filter: brightness(.5); }
+.portfolio-card:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.5);
+}
 
 /* Overlay — hidden by default */
 .portfolio-overlay {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 40px;
-    background: linear-gradient(to top, rgba(4,3,18,.97) 0%, rgba(4,3,18,.1) 45%, transparent 100%);
-    opacity: 0;
-    transition: opacity .4s ease;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  background: linear-gradient(
+    to top,
+    rgba(4, 3, 18, 0.97) 0%,
+    rgba(4, 3, 18, 0.1) 45%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
-.portfolio-card:hover .portfolio-overlay { opacity: 1; }
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
 
 /* Featured (QuickRide) — always shows bottom content */
 .portfolio-featured .portfolio-overlay {
-    opacity: 1;
-    background: linear-gradient(to top, rgba(4,3,18,.97) 0%, rgba(4,3,18,.05) 38%, transparent 100%);
+  opacity: 1;
+  background: linear-gradient(
+    to top,
+    rgba(4, 3, 18, 0.97) 0%,
+    rgba(4, 3, 18, 0.05) 38%,
+    transparent 100%
+  );
 }
-
 
 /* Number label — only on non-featured cards */
 .portfolio-card:not(.portfolio-featured)::before {
-    content: attr(data-index);
-    position: absolute; top: 20px; right: 20px; z-index: 2;
-    font-family: var(--font-h); font-size: .72rem; font-weight: 800;
-    color: rgba(255,255,255,.35);
-    letter-spacing: .15em;
-    transition: color .3s;
+  content: attr(data-index);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  font-family: var(--font-h);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.15em;
+  transition: color 0.3s;
 }
-.portfolio-card:not(.portfolio-featured):hover::before { color: var(--iris-l); }
+.portfolio-card:not(.portfolio-featured):hover::before {
+  color: var(--iris-l);
+}
 
 /* Tags */
-.port-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.port-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
 .port-tag {
-    font-family: var(--font-h); font-size: .64rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: .1em;
-    color: var(--iris-l);
-    background: rgba(139,92,246,.15);
-    border: 1px solid rgba(139,92,246,.4);
-    backdrop-filter: blur(6px);
-    padding: 4px 11px; border-radius: 20px;
-    transition: background .3s, border-color .3s;
+  font-family: var(--font-h);
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--iris-l);
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  backdrop-filter: blur(6px);
+  padding: 4px 11px;
+  border-radius: 20px;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
 }
 .portfolio-card:hover .port-tag {
-    background: rgba(139,92,246,.3);
-    border-color: rgba(139,92,246,.7);
+  background: rgba(139, 92, 246, 0.3);
+  border-color: rgba(139, 92, 246, 0.7);
 }
 
 /* Title */
 .portfolio-overlay h3 {
-    font-family: var(--font-h); font-size: 1.15rem; font-weight: 700;
-    color: #fff; margin-bottom: 18px; line-height: 1.3;
-    text-shadow: 0 2px 20px rgba(0,0,0,.5);
+  font-family: var(--font-h);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.3;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
-.portfolio-featured .portfolio-overlay h3 { font-size: 2rem; }
+.portfolio-featured .portfolio-overlay h3 {
+  font-size: 2rem;
+}
 
 /* View Project link */
 .port-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: var(--font-h); font-size: .8rem; font-weight: 700;
-    color: #fff; text-decoration: none;
-    background: rgba(255,255,255,.1);
-    border: 1px solid rgba(255,255,255,.2);
-    backdrop-filter: blur(8px);
-    padding: 10px 20px; border-radius: 8px;
-    width: fit-content;
-    transition: background .3s, border-color .3s, gap .3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-h);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: fit-content;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    gap 0.3s;
 }
-.port-link:hover { background: var(--iris-grad); border-color: transparent; gap: 12px; }
-.port-link svg { flex-shrink: 0; transition: transform .3s; }
-.port-link:hover svg { transform: translate(2px, -2px); }
+.port-link:hover {
+  background: var(--iris-grad);
+  border-color: transparent;
+  gap: 12px;
+}
+.port-link svg {
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.port-link:hover svg {
+  transform: translate(2px, -2px);
+}
 
 /* Responsive */
-@media(max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-    }
-    .portfolio-featured { grid-column: 1; }
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+  .portfolio-featured {
+    grid-column: 1;
+  }
 
-    /* Screenshots carry their own baked-in text, so overlaying our caption
+  /* Screenshots carry their own baked-in text, so overlaying our caption
        on top of the image either shadows that text or requires darkening
        the image so much it looks muddy. Instead, drop the image to its
        natural preview height and place the caption in normal flow below it
        on a solid card background — no overlay, no gradient, no dimming. */
-    .portfolio-card {
-        display: flex;
-        flex-direction: column;
-    }
-    .portfolio-card img {
-        position: static;
-        width: 100%;
-        height: 220px;
-        flex-shrink: 0;
-    }
-    .portfolio-card:hover img { filter: none; }
+  .portfolio-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .portfolio-card img {
+    position: static;
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+  }
+  .portfolio-card:hover img {
+    filter: none;
+  }
 
-    .portfolio-overlay,
-    .portfolio-featured .portfolio-overlay {
-        position: static;
-        opacity: 1;
-        flex: 1;
-        justify-content: flex-start;
-        padding: 24px;
-        background: var(--dark-3);
-    }
-    .portfolio-overlay h3 { text-shadow: none; }
+  .portfolio-overlay,
+  .portfolio-featured .portfolio-overlay {
+    position: static;
+    opacity: 1;
+    flex: 1;
+    justify-content: flex-start;
+    padding: 24px;
+    background: var(--dark-3);
+  }
+  .portfolio-overlay h3 {
+    text-shadow: none;
+  }
 }
 
-@media(max-width: 480px) {
-    .portfolio-card img { height: 180px; }
-    .portfolio-overlay,
-    .portfolio-featured .portfolio-overlay {
-        padding: 20px;
-    }
-    .portfolio-overlay h3 { font-size: .95rem; }
-    .portfolio-featured .portfolio-overlay h3 { font-size: 1.3rem; }
+@media (max-width: 480px) {
+  .portfolio-card img {
+    height: 180px;
+  }
+  .portfolio-overlay,
+  .portfolio-featured .portfolio-overlay {
+    padding: 20px;
+  }
+  .portfolio-overlay h3 {
+    font-size: 0.95rem;
+  }
+  .portfolio-featured .portfolio-overlay h3 {
+    font-size: 1.3rem;
+  }
 }

@@ -1,767 +1,1321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Webify Tech Solutions is a web development, software development &amp; app development studio in Johannesburg, serving businesses across Gauteng. UI/UX design, SEO &amp; digital marketing, API development, and website maintenance &amp; support.">
-    <title>Webify Tech Solutions | Web &amp; Software Development in Johannesburg, Gauteng</title>
-    <link rel="canonical" href="https://www.webify.joburg/">
-    <link rel="icon" href="/favicon.ico" sizes="32x32">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/Webify/favicon/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/Webify/favicon/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="img/Webify/favicon/favicon-48.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/Webify/favicon/favicon-96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/Webify/favicon/favicon-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="img/Webify/favicon/favicon-512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/Webify/favicon/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/portfolio.css">
-    <link rel="stylesheet" href="css/animations.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Webify Tech Solutions is a web development, software development &amp; app development studio in Johannesburg, serving businesses across Gauteng. UI/UX design, SEO &amp; digital marketing, API development, and website maintenance &amp; support."
+    />
+    <title>
+      Webify Tech Solutions | Web &amp; Software Development in Johannesburg,
+      Gauteng
+    </title>
+    <link rel="canonical" href="https://www.webify.joburg/" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/Webify/favicon/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/Webify/favicon/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="img/Webify/favicon/favicon-48.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="img/Webify/favicon/favicon-96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="img/Webify/favicon/favicon-192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="img/Webify/favicon/favicon-512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/Webify/favicon/apple-touch-icon.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <link rel="stylesheet" href="css/animations.css" />
     <script defer src="/_vercel/insights/script.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- ===================== PROMO BANNER ===================== -->
+    <!-- To activate: set PROMO_ACTIVE = true in js/main.js and update the message below -->
+    <div class="promo-banner" id="promoBanner" aria-live="polite" hidden>
+      <p class="promo-text">
+        🎉 <strong>Limited Offer:</strong> Get 20% off your first website
+        project — <a href="#contact" class="promo-link">Claim it now</a>
+      </p>
+      <button
+        class="promo-close"
+        id="promoClose"
+        aria-label="Close promotion banner"
+      >
+        ✕
+      </button>
+    </div>
 
-<!-- ===================== PROMO BANNER ===================== -->
-<!-- To activate: set PROMO_ACTIVE = true in js/main.js and update the message below -->
-<div class="promo-banner" id="promoBanner" aria-live="polite" hidden>
-    <p class="promo-text">
-        🎉 <strong>Limited Offer:</strong> Get 20% off your first website project — <a href="#contact" class="promo-link">Claim it now</a>
-    </p>
-    <button class="promo-close" id="promoClose" aria-label="Close promotion banner">✕</button>
-</div>
-
-<!-- ===================== NAVBAR ===================== -->
-<header class="header" id="header">
-    <nav class="navbar container">
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header" id="header">
+      <nav class="navbar container">
         <a href="#home" class="logo">
-            <img src="img/Webify/svg/nav.svg" alt="Webify" class="logo-img">
+          <img src="img/Webify/svg/nav.svg" alt="Webify" class="logo-img" />
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
         </button>
         <ul class="nav-menu" id="navMenu">
-            <li><a href="#home"       class="nav-link">Home</a></li>
-            <li><a href="#services"   class="nav-link">Services</a></li>
-            <li><a href="#about"      class="nav-link">About</a></li>
-            <li><a href="#portfolio"  class="nav-link">Portfolio</a></li>
-            <li><a href="#pricing"    class="nav-link">Pricing</a></li>
-            <li><a href="#blog"       class="nav-link">Blog</a></li>
-            <li><a href="#contact"    class="nav-link">Contact</a></li>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <a href="#contact" class="btn btn-orange nav-quote">Get A Quote</a>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="home">
-    <!-- Full-bleed background image -->
-    <div class="hero-bg" aria-hidden="true">
-        <img src="img/hero/5.webp" alt="">
-    </div>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+      <!-- Full-bleed background image -->
+      <div class="hero-bg" aria-hidden="true">
+        <img src="img/hero/5.webp" alt="" />
+      </div>
 
-    <div class="hero-content container">
+      <div class="hero-content container">
         <div class="hero-text">
-            <span class="hero-badge reveal-up">
-                Web | Software | Innovation
-            </span>
-            <h1 class="reveal-up">Web &amp; Software Development<br>Studio In <span class="text-orange">Johannesburg, Gauteng</span></h1>
-            <p class="reveal-up">Webify Tech Solutions delivers premium web development, software development, and app development for businesses across Gauteng. We transform ideas into pixel-perfect, high-performance digital products.</p>
-            <div class="hero-btns reveal-up">
-                <a href="#contact" class="btn btn-orange btn-lg">Get Started</a>
-                <a href="#about" class="btn btn-outline-white btn-lg">
-                    <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></span>
-                    Our Experts
-                </a>
-            </div>
+          <span class="hero-badge reveal-up">
+            Web | Software | Innovation
+          </span>
+          <h1 class="reveal-up">
+            Web &amp; Software Development<br />Studio In
+            <span class="text-orange">Johannesburg, Gauteng</span>
+          </h1>
+          <p class="reveal-up">
+            Webify Tech Solutions delivers premium web development, software
+            development, and app development for businesses across Gauteng. We
+            transform ideas into pixel-perfect, high-performance digital
+            products.
+          </p>
+          <div class="hero-btns reveal-up">
+            <a href="#contact" class="btn btn-orange btn-lg">Get Started</a>
+            <a href="#about" class="btn btn-outline-white btn-lg">
+              <span class="play-btn"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21" /></svg
+              ></span>
+              Our Experts
+            </a>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== SERVICES ===================== -->
-<section class="section-light" id="services">
-    <div class="container">
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section-light" id="services">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Our Services</span>
-            <h2>What We Do Best</h2>
-            <p class="section-desc">Comprehensive web development services tailored to your business needs.</p>
+          <span class="section-tag">Our Services</span>
+          <h2>What We Do Best</h2>
+          <p class="section-desc">
+            Comprehensive web development services tailored to your business
+            needs.
+          </p>
         </div>
         <div class="services-grid">
-
-            <div class="service-card reveal-up">
-                <div class="service-thumb">
-                    <img src="img/services/web.webp" alt="Web Development" loading="lazy" decoding="async">
-                </div>
-                <div class="service-card-body">
-                    <h3>Web Development</h3>
-                    <p>Custom websites and web applications built with modern technologies. From simple landing pages to complex web platforms.</p>
-                    <ul class="srv-list">
-                        <li>Responsive Design</li>
-                        <li>Custom CMS Solutions</li>
-                        <li>E-commerce Platforms</li>
-                        <li>Progressive Web Apps</li>
-                    </ul>
-                </div>
+          <div class="service-card reveal-up">
+            <div class="service-thumb">
+              <img
+                src="img/services/web.webp"
+                alt="Web Development"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-
-            <div class="service-card reveal-up" style="--delay:.08s">
-                <div class="service-thumb">
-                    <img src="img/services/ui.webp" alt="UI/UX Design" loading="lazy" decoding="async">
-                </div>
-                <div class="service-card-body">
-                    <h3>UI/UX Design</h3>
-                    <p>Beautiful, intuitive interfaces designed to delight users and drive engagement. We create experiences that users love.</p>
-                    <ul class="srv-list">
-                        <li>User Research</li>
-                        <li>Wireframing &amp; Prototyping</li>
-                        <li>Visual Design</li>
-                        <li>Usability Testing</li>
-                    </ul>
-                </div>
+            <div class="service-card-body">
+              <h3>Web Development</h3>
+              <p>
+                Custom websites and web applications built with modern
+                technologies. From simple landing pages to complex web
+                platforms.
+              </p>
+              <ul class="srv-list">
+                <li>Responsive Design</li>
+                <li>Custom CMS Solutions</li>
+                <li>E-commerce Platforms</li>
+                <li>Progressive Web Apps</li>
+              </ul>
             </div>
+          </div>
 
-            <div class="service-card reveal-up" style="--delay:.16s">
-                <div class="service-thumb">
-                    <img src="img/services/perfomance.webp" alt="Performance Optimization" loading="lazy" decoding="async">
-                </div>
-                <div class="service-card-body">
-                    <h3>Performance Optimization</h3>
-                    <p>Speed matters. We optimize every aspect of your website for blazing-fast load times and smooth performance.</p>
-                    <ul class="srv-list">
-                        <li>Code Optimization</li>
-                        <li>Asset Compression</li>
-                        <li>Caching Strategies</li>
-                        <li>Core Web Vitals</li>
-                    </ul>
-                </div>
+          <div class="service-card reveal-up" style="--delay: 0.08s">
+            <div class="service-thumb">
+              <img
+                src="img/services/ui.webp"
+                alt="UI/UX Design"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-
-            <div class="service-card reveal-up" style="--delay:.08s">
-                <div class="service-thumb">
-                    <img src="img/services/maintenance.webp" alt="Maintenance & Support" loading="lazy" decoding="async">
-                </div>
-                <div class="service-card-body">
-                    <h3>Maintenance &amp; Support</h3>
-                    <p>Ongoing maintenance and support to keep your website running smoothly. We're here when you need us.</p>
-                    <ul class="srv-list">
-                        <li>Regular Updates</li>
-                        <li>Security Monitoring</li>
-                        <li>Bug Fixes</li>
-                        <li>24/7 Support</li>
-                    </ul>
-                </div>
+            <div class="service-card-body">
+              <h3>UI/UX Design</h3>
+              <p>
+                Beautiful, intuitive interfaces designed to delight users and
+                drive engagement. We create experiences that users love.
+              </p>
+              <ul class="srv-list">
+                <li>User Research</li>
+                <li>Wireframing &amp; Prototyping</li>
+                <li>Visual Design</li>
+                <li>Usability Testing</li>
+              </ul>
             </div>
+          </div>
 
-            <div class="service-card reveal-up" style="--delay:.16s">
-                <div class="service-thumb">
-                    <img src="img/services/seo.webp" alt="SEO & Marketing" loading="lazy" decoding="async">
-                </div>
-                <div class="service-card-body">
-                    <h3>SEO &amp; Marketing</h3>
-                    <p>Get found online. We implement SEO best practices and marketing strategies to help your business grow.</p>
-                    <ul class="srv-list">
-                        <li>Technical SEO</li>
-                        <li>Content Strategy</li>
-                        <li>Analytics Setup</li>
-                        <li>Conversion Optimization</li>
-                    </ul>
-                </div>
+          <div class="service-card reveal-up" style="--delay: 0.16s">
+            <div class="service-thumb">
+              <img
+                src="img/services/perfomance.webp"
+                alt="Performance Optimization"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-
-            <div class="service-card reveal-up" style="--delay:.24s">
-                <div class="service-thumb">
-                    <img src="img/services/api.webp" alt="API Development" loading="lazy" decoding="async">
-                </div>
-                <div class="service-card-body">
-                    <h3>API Development</h3>
-                    <p>Robust, scalable APIs that power your applications. RESTful and GraphQL solutions built to your specifications.</p>
-                    <ul class="srv-list">
-                        <li>RESTful APIs</li>
-                        <li>GraphQL Implementation</li>
-                        <li>Third-party Integrations</li>
-                        <li>API Documentation</li>
-                    </ul>
-                </div>
+            <div class="service-card-body">
+              <h3>Performance Optimization</h3>
+              <p>
+                Speed matters. We optimize every aspect of your website for
+                blazing-fast load times and smooth performance.
+              </p>
+              <ul class="srv-list">
+                <li>Code Optimization</li>
+                <li>Asset Compression</li>
+                <li>Caching Strategies</li>
+                <li>Core Web Vitals</li>
+              </ul>
             </div>
+          </div>
 
+          <div class="service-card reveal-up" style="--delay: 0.08s">
+            <div class="service-thumb">
+              <img
+                src="img/services/maintenance.webp"
+                alt="Maintenance & Support"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="service-card-body">
+              <h3>Maintenance &amp; Support</h3>
+              <p>
+                Ongoing maintenance and support to keep your website running
+                smoothly. We're here when you need us.
+              </p>
+              <ul class="srv-list">
+                <li>Regular Updates</li>
+                <li>Security Monitoring</li>
+                <li>Bug Fixes</li>
+                <li>24/7 Support</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card reveal-up" style="--delay: 0.16s">
+            <div class="service-thumb">
+              <img
+                src="img/services/seo.webp"
+                alt="SEO & Marketing"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="service-card-body">
+              <h3>SEO &amp; Marketing</h3>
+              <p>
+                Get found online. We implement SEO best practices and marketing
+                strategies to help your business grow.
+              </p>
+              <ul class="srv-list">
+                <li>Technical SEO</li>
+                <li>Content Strategy</li>
+                <li>Analytics Setup</li>
+                <li>Conversion Optimization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card reveal-up" style="--delay: 0.24s">
+            <div class="service-thumb">
+              <img
+                src="img/services/api.webp"
+                alt="API Development"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="service-card-body">
+              <h3>API Development</h3>
+              <p>
+                Robust, scalable APIs that power your applications. RESTful and
+                GraphQL solutions built to your specifications.
+              </p>
+              <ul class="srv-list">
+                <li>RESTful APIs</li>
+                <li>GraphQL Implementation</li>
+                <li>Third-party Integrations</li>
+                <li>API Documentation</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== ABOUT ===================== -->
-<section class="section-white about-section" id="about">
-    <div class="container">
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section-white about-section" id="about">
+      <div class="container">
         <div class="about-grid">
-            <!-- Diamond image collage -->
-            <div class="diamond-wrap reveal-left">
-                <div class="diamond-grid">
-                    <div class="diamond-cell"><img src="img/about/2.webp" alt="Webify team" loading="lazy" decoding="async"></div>
-                    <div class="diamond-cell"><img src="img/about/IMG_5841.webp" alt="Webify team" loading="lazy" decoding="async"></div>
-                    <div class="diamond-cell"><img src="img/about/IMG_1170(1).webp" alt="Webify team" loading="lazy" decoding="async"></div>
-                    <div class="diamond-cell"><img src="img/about/IMG_4796.webp" alt="Webify team" loading="lazy" decoding="async"></div>
-                </div>
+          <!-- Diamond image collage -->
+          <div class="diamond-wrap reveal-left">
+            <div class="diamond-grid">
+              <div class="diamond-cell">
+                <img
+                  src="img/about/2.webp"
+                  alt="Webify team"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="diamond-cell">
+                <img
+                  src="img/about/IMG_5841.webp"
+                  alt="Webify team"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="diamond-cell">
+                <img
+                  src="img/about/IMG_1170(1).webp"
+                  alt="Webify team"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="diamond-cell">
+                <img
+                  src="img/about/IMG_4796.webp"
+                  alt="Webify team"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
-            <!-- Content -->
-            <div class="about-content reveal-right">
-                <span class="section-tag">About Us</span>
-                <h2>We Design. We Build. We Deploy.</h2>
-                <p>At Webify, we don't just build websites, we create digital experiences that captivate, engage, and convert. With over 4 years of experience in the industry, we've helped businesses of all sizes establish their online presence and achieve their goals.</p>
-                <p>Our approach combines cutting-edge technology with timeless design principles. We're obsessed with details, performance, and user experience. Every project we take on is treated as a unique opportunity to push boundaries and deliver something extraordinary.</p>
-                <ul class="about-list">
-                    <li>4+ Years of industry experience</li>
-                    <li>50+ successful projects delivered</li>
-                    <li>100% client satisfaction rate</li>
-                    <li>24/7 dedicated technical support</li>
-                </ul>
-                <a href="#contact" class="btn btn-orange">Know More</a>
-            </div>
+          </div>
+          <!-- Content -->
+          <div class="about-content reveal-right">
+            <span class="section-tag">About Us</span>
+            <h2>We Design. We Build. We Deploy.</h2>
+            <p>
+              At Webify, we don't just build websites, we create digital
+              experiences that captivate, engage, and convert. With over 4 years
+              of experience in the industry, we've helped businesses of all
+              sizes establish their online presence and achieve their goals.
+            </p>
+            <p>
+              Our approach combines cutting-edge technology with timeless design
+              principles. We're obsessed with details, performance, and user
+              experience. Every project we take on is treated as a unique
+              opportunity to push boundaries and deliver something
+              extraordinary.
+            </p>
+            <ul class="about-list">
+              <li>4+ Years of industry experience</li>
+              <li>50+ successful projects delivered</li>
+              <li>100% client satisfaction rate</li>
+              <li>24/7 dedicated technical support</li>
+            </ul>
+            <a href="#contact" class="btn btn-orange">Know More</a>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== TECH STACK ===================== -->
-<section class="section-white" id="tech-stack">
-    <div class="container">
+    <!-- ===================== TECH STACK ===================== -->
+    <section class="section-white" id="tech-stack">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">What We Use</span>
-            <h2>Engineering Stack</h2>
-            <p class="section-desc">The modern tools and frameworks we use to build fast, scalable, and reliable digital products.</p>
+          <span class="section-tag">What We Use</span>
+          <h2>Engineering Stack</h2>
+          <p class="section-desc">
+            The modern tools and frameworks we use to build fast, scalable, and
+            reliable digital products.
+          </p>
         </div>
         <div class="stack-logos reveal-up">
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB" loading="lazy">
-                <span>MongoDB</span>
-            </div>
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=express" alt="Express" loading="lazy">
-                <span>Express</span>
-            </div>
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=react" alt="React" loading="lazy">
-                <span>React</span>
-            </div>
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" loading="lazy">
-                <span>Node.js</span>
-            </div>
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" loading="lazy">
-                <span>Tailwind</span>
-            </div>
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=supabase" alt="Supabase" loading="lazy">
-                <span>Supabase</span>
-            </div>
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=firebase" alt="Firebase" loading="lazy">
-                <span>Firebase</span>
-            </div>
-            <div class="stack-logo-item">
-                <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" loading="lazy">
-                <span>PostgreSQL</span>
-            </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=mongodb"
+              alt="MongoDB"
+              loading="lazy"
+            />
+            <span>MongoDB</span>
+          </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=express"
+              alt="Express"
+              loading="lazy"
+            />
+            <span>Express</span>
+          </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=react"
+              alt="React"
+              loading="lazy"
+            />
+            <span>React</span>
+          </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=nodejs"
+              alt="Node.js"
+              loading="lazy"
+            />
+            <span>Node.js</span>
+          </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=tailwind"
+              alt="Tailwind CSS"
+              loading="lazy"
+            />
+            <span>Tailwind</span>
+          </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=supabase"
+              alt="Supabase"
+              loading="lazy"
+            />
+            <span>Supabase</span>
+          </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=firebase"
+              alt="Firebase"
+              loading="lazy"
+            />
+            <span>Firebase</span>
+          </div>
+          <div class="stack-logo-item">
+            <img
+              src="https://skillicons.dev/icons?i=postgres"
+              alt="PostgreSQL"
+              loading="lazy"
+            />
+            <span>PostgreSQL</span>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-
-<!-- ===================== PORTFOLIO ===================== -->
-<section class="section-dark" id="portfolio">
-    <div class="container">
+    <!-- ===================== PORTFOLIO ===================== -->
+    <section class="section-dark" id="portfolio">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Case Studies</span>
-            <h2 class="text-white">Our Latest Work</h2>
+          <span class="section-tag">Case Studies</span>
+          <h2 class="text-white">Our Latest Work</h2>
         </div>
         <div class="portfolio-grid">
-            <div class="portfolio-card portfolio-featured reveal-up">
-                <img src="img/portfolio/quickride.png" alt="QuickRide Africa">
-                <div class="portfolio-overlay">
-                    <div class="port-tags">
-                        <span class="port-tag">Web Development</span>
-                        <span class="port-tag">Transport</span>
-                    </div>
-                    <h3>QuickRide Africa</h3>
-                    <a href="https://www.quickride.africa/" target="_blank" rel="noopener noreferrer" class="port-link">
-                        View Project
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                </div>
+          <div class="portfolio-card portfolio-featured reveal-up">
+            <img src="img/portfolio/quickride.png" alt="QuickRide Africa" />
+            <div class="portfolio-overlay">
+              <div class="port-tags">
+                <span class="port-tag">Web Development</span>
+                <span class="port-tag">Transport</span>
+              </div>
+              <h3>QuickRide Africa</h3>
+              <a
+                href="https://www.quickride.africa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="port-link"
+              >
+                View Project
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
             </div>
-            <div class="portfolio-card portfolio-featured reveal-up">
-                <img src="img/portfolio/agile-credit.png" alt="Agile Credit">
-                <div class="portfolio-overlay">
-                    <div class="port-tags">
-                        <span class="port-tag">FinTech</span>
-                        <span class="port-tag">Web Development</span>
-                    </div>
-                    <h3>Agile Credit</h3>
-                    <a href="https://agile-credit-website-vercel.vercel.app/" target="_blank" rel="noopener noreferrer" class="port-link">
-                        View Project
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                </div>
+          </div>
+          <div class="portfolio-card portfolio-featured reveal-up">
+            <img src="img/portfolio/agile-credit.png" alt="Agile Credit" />
+            <div class="portfolio-overlay">
+              <div class="port-tags">
+                <span class="port-tag">FinTech</span>
+                <span class="port-tag">Web Development</span>
+              </div>
+              <h3>Agile Credit</h3>
+              <a
+                href="https://agile-credit-website-vercel.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="port-link"
+              >
+                View Project
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
             </div>
-            <div class="portfolio-card reveal-up" data-index="03">
-                <img src="img/portfolio/techhub.png" alt="TechHub Electronics">
-                <div class="portfolio-overlay">
-                    <div class="port-tags">
-                        <span class="port-tag">UI Design</span>
-                        <span class="port-tag">E-commerce</span>
-                    </div>
-                    <h3>TechHub Electronics</h3>
-                    <a href="https://canva.link/us4pjoz1wduxvx4" target="_blank" rel="noopener noreferrer" class="port-link">
-                        View Project
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                </div>
+          </div>
+          <div class="portfolio-card reveal-up" data-index="03">
+            <img src="img/portfolio/techhub.png" alt="TechHub Electronics" />
+            <div class="portfolio-overlay">
+              <div class="port-tags">
+                <span class="port-tag">UI Design</span>
+                <span class="port-tag">E-commerce</span>
+              </div>
+              <h3>TechHub Electronics</h3>
+              <a
+                href="https://canva.link/us4pjoz1wduxvx4"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="port-link"
+              >
+                View Project
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
             </div>
-            <div class="portfolio-card reveal-up" style="--delay:.15s" data-index="04">
-                <img src="img/portfolio/webify-fashion.png" alt="Webify Fashion">
-                <div class="portfolio-overlay">
-                    <div class="port-tags">
-                        <span class="port-tag">UI Design</span>
-                        <span class="port-tag">Fashion</span>
-                    </div>
-                    <h3>Webify Fashion</h3>
-                    <a href="https://canva.link/2sh7eghgorubu1s" target="_blank" rel="noopener noreferrer" class="port-link">
-                        View Project
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                    </a>
-                </div>
+          </div>
+          <div
+            class="portfolio-card reveal-up"
+            style="--delay: 0.15s"
+            data-index="04"
+          >
+            <img src="img/portfolio/webify-fashion.png" alt="Webify Fashion" />
+            <div class="portfolio-overlay">
+              <div class="port-tags">
+                <span class="port-tag">UI Design</span>
+                <span class="port-tag">Fashion</span>
+              </div>
+              <h3>Webify Fashion</h3>
+              <a
+                href="https://canva.link/2sh7eghgorubu1s"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="port-link"
+              >
+                View Project
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== TESTIMONIALS ===================== -->
-<section class="section-dark" id="testimonials">
-    <div class="container">
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="section-dark" id="testimonials">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Who We Work With</span>
-            <h2 class="text-white">Brands That Trust <span class="logo-text"><span class="logo-web">web</span><span class="logo-ify">ify</span></span></h2>
-            <p class="clients-intro">We partner with ambitious businesses across Africa to build digital experiences that drive real results.</p>
+          <span class="section-tag">Who We Work With</span>
+          <h2 class="text-white">
+            Brands That Trust
+            <span class="logo-text"
+              ><span class="logo-web">web</span
+              ><span class="logo-ify">ify</span></span
+            >
+          </h2>
+          <p class="clients-intro">
+            We partner with ambitious businesses across Africa to build digital
+            experiences that drive real results.
+          </p>
         </div>
         <div class="clients-showcase">
-            <div class="client-showcase-item client-logo reveal-up" data-logo="img/clients/quick.svg" data-alt="QuickRide Africa">
-                <div class="client-showcase-logo">
-                    <img src="img/clients/quick.svg" alt="QuickRide Africa" loading="lazy">
-                </div>
-                <span class="client-showcase-name">QuickRide Africa</span>
-                <span class="client-showcase-type">Transport &amp; Mobility</span>
+          <div
+            class="client-showcase-item client-logo reveal-up"
+            data-logo="img/clients/quick.svg"
+            data-alt="QuickRide Africa"
+          >
+            <div class="client-showcase-logo">
+              <img
+                src="img/clients/quick.svg"
+                alt="QuickRide Africa"
+                loading="lazy"
+              />
             </div>
-            <div class="client-showcase-item client-logo reveal-up" style="--delay:.1s" data-logo="img/clients/agile.jpeg" data-alt="Agile Credit">
-                <div class="client-showcase-logo">
-                    <img src="img/clients/agile.jpeg" alt="Agile Credit" loading="lazy">
-                </div>
-                <span class="client-showcase-name">Agile Credit</span>
-                <span class="client-showcase-type">FinTech</span>
+            <span class="client-showcase-name">QuickRide Africa</span>
+            <span class="client-showcase-type">Transport &amp; Mobility</span>
+          </div>
+          <div
+            class="client-showcase-item client-logo reveal-up"
+            style="--delay: 0.1s"
+            data-logo="img/clients/agile.jpeg"
+            data-alt="Agile Credit"
+          >
+            <div class="client-showcase-logo">
+              <img
+                src="img/clients/agile.jpeg"
+                alt="Agile Credit"
+                loading="lazy"
+              />
             </div>
-            <div class="client-showcase-item client-logo reveal-up" style="--delay:.2s" data-logo="img/clients/MK logo.svg" data-alt="MK Engineering SA">
-                <div class="client-showcase-logo">
-                    <img src="img/clients/MK logo.svg" alt="MK Engineering SA" loading="lazy">
-                </div>
-                <span class="client-showcase-name">MK Engineering SA</span>
-                <span class="client-showcase-type">Engineering Services</span>
+            <span class="client-showcase-name">Agile Credit</span>
+            <span class="client-showcase-type">FinTech</span>
+          </div>
+          <div
+            class="client-showcase-item client-logo reveal-up"
+            style="--delay: 0.2s"
+            data-logo="img/clients/MK logo.svg"
+            data-alt="MK Engineering SA"
+          >
+            <div class="client-showcase-logo">
+              <img
+                src="img/clients/MK logo.svg"
+                alt="MK Engineering SA"
+                loading="lazy"
+              />
             </div>
-            <div class="client-showcase-item client-logo reveal-up" style="--delay:.3s" data-logo="img/Webify/png/1.png" data-alt="Webify">
-                <div class="client-showcase-logo">
-                    <img src="img/Webify/png/1.png" alt="Webify" loading="lazy">
-                </div>
-                <span class="client-showcase-name">Webify</span>
-                <span class="client-showcase-type">We Trust Our Own Work</span>
+            <span class="client-showcase-name">MK Engineering SA</span>
+            <span class="client-showcase-type">Engineering Services</span>
+          </div>
+          <div
+            class="client-showcase-item client-logo reveal-up"
+            style="--delay: 0.3s"
+            data-logo="img/Webify/png/1.png"
+            data-alt="Webify"
+          >
+            <div class="client-showcase-logo">
+              <img src="img/Webify/png/1.png" alt="Webify" loading="lazy" />
             </div>
+            <span class="client-showcase-name">Webify</span>
+            <span class="client-showcase-type">We Trust Our Own Work</span>
+          </div>
         </div>
         <!-- TODO: add real Google reviews below the client cards -->
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== PROCESS ===================== -->
-<section class="section-dark process-section">
-    <div class="container">
+    <!-- ===================== PROCESS ===================== -->
+    <section class="section-dark process-section">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Work Process</span>
-            <h2>Works in 3 Easy Steps</h2>
+          <span class="section-tag">Work Process</span>
+          <h2>Works in 3 Easy Steps</h2>
         </div>
         <div class="process-steps">
-            <div class="process-step reveal-up">
-                <div class="step-circle">
-                    <span class="step-num">01</span>
-                </div>
-                <h3>Plan &amp; Research</h3>
-                <p>We dive deep into your goals, target audience, and competitive landscape to build a strategic foundation that drives results.</p>
+          <div class="process-step reveal-up">
+            <div class="step-circle">
+              <span class="step-num">01</span>
             </div>
+            <h3>Plan &amp; Research</h3>
+            <p>
+              We dive deep into your goals, target audience, and competitive
+              landscape to build a strategic foundation that drives results.
+            </p>
+          </div>
 
-            <!-- Node connector 1→2 -->
-            <svg class="node-connector" aria-hidden="true" viewBox="0 0 160 100" preserveAspectRatio="none">
-                <path class="nc-track" d="M0,50 C40,50 60,20 80,50 C100,80 120,50 160,50"/>
-                <circle class="nc-node" cx="40" cy="38" r="3"/>
-                <circle class="nc-node" cx="80" cy="50" r="4"/>
-                <circle class="nc-node" cx="120" cy="62" r="3"/>
-                <circle class="nc-dot nc-dot-1" r="4">
-                    <animateMotion dur="2.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1">
-                        <mpath href="#nc-path-1"/>
-                    </animateMotion>
-                </circle>
-                <circle class="nc-dot nc-dot-2" r="2.5">
-                    <animateMotion dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1">
-                        <mpath href="#nc-path-1"/>
-                    </animateMotion>
-                </circle>
-                <defs>
-                    <path id="nc-path-1" d="M0,50 C40,50 60,20 80,50 C100,80 120,50 160,50"/>
-                </defs>
-            </svg>
+          <!-- Node connector 1→2 -->
+          <svg
+            class="node-connector"
+            aria-hidden="true"
+            viewBox="0 0 160 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              class="nc-track"
+              d="M0,50 C40,50 60,20 80,50 C100,80 120,50 160,50"
+            />
+            <circle class="nc-node" cx="40" cy="38" r="3" />
+            <circle class="nc-node" cx="80" cy="50" r="4" />
+            <circle class="nc-node" cx="120" cy="62" r="3" />
+            <circle class="nc-dot nc-dot-1" r="4">
+              <animateMotion
+                dur="2.4s"
+                repeatCount="indefinite"
+                calcMode="spline"
+                keyTimes="0;1"
+                keySplines="0.4 0 0.6 1"
+              >
+                <mpath href="#nc-path-1" />
+              </animateMotion>
+            </circle>
+            <circle class="nc-dot nc-dot-2" r="2.5">
+              <animateMotion
+                dur="2.4s"
+                begin="0.9s"
+                repeatCount="indefinite"
+                calcMode="spline"
+                keyTimes="0;1"
+                keySplines="0.4 0 0.6 1"
+              >
+                <mpath href="#nc-path-1" />
+              </animateMotion>
+            </circle>
+            <defs>
+              <path
+                id="nc-path-1"
+                d="M0,50 C40,50 60,20 80,50 C100,80 120,50 160,50"
+              />
+            </defs>
+          </svg>
 
-            <div class="process-step reveal-up" style="--delay:.15s">
-                <div class="step-circle">
-                    <span class="step-num">02</span>
-                </div>
-                <h3>Design &amp; Prototype</h3>
-                <p>From wireframes to pixel-perfect mockups, we design interfaces that are both beautiful and rigorously functional.</p>
+          <div class="process-step reveal-up" style="--delay: 0.15s">
+            <div class="step-circle">
+              <span class="step-num">02</span>
             </div>
+            <h3>Design &amp; Prototype</h3>
+            <p>
+              From wireframes to pixel-perfect mockups, we design interfaces
+              that are both beautiful and rigorously functional.
+            </p>
+          </div>
 
-            <!-- Node connector 2→3 -->
-            <svg class="node-connector" aria-hidden="true" viewBox="0 0 160 100" preserveAspectRatio="none">
-                <path class="nc-track" d="M0,50 C40,50 60,80 80,50 C100,20 120,50 160,50"/>
-                <circle class="nc-node" cx="40" cy="62" r="3"/>
-                <circle class="nc-node" cx="80" cy="50" r="4"/>
-                <circle class="nc-node" cx="120" cy="38" r="3"/>
-                <circle class="nc-dot nc-dot-1" r="4">
-                    <animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1">
-                        <mpath href="#nc-path-2"/>
-                    </animateMotion>
-                </circle>
-                <circle class="nc-dot nc-dot-2" r="2.5">
-                    <animateMotion dur="2.4s" begin="1.3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1">
-                        <mpath href="#nc-path-2"/>
-                    </animateMotion>
-                </circle>
-                <defs>
-                    <path id="nc-path-2" d="M0,50 C40,50 60,80 80,50 C100,20 120,50 160,50"/>
-                </defs>
-            </svg>
+          <!-- Node connector 2→3 -->
+          <svg
+            class="node-connector"
+            aria-hidden="true"
+            viewBox="0 0 160 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              class="nc-track"
+              d="M0,50 C40,50 60,80 80,50 C100,20 120,50 160,50"
+            />
+            <circle class="nc-node" cx="40" cy="62" r="3" />
+            <circle class="nc-node" cx="80" cy="50" r="4" />
+            <circle class="nc-node" cx="120" cy="38" r="3" />
+            <circle class="nc-dot nc-dot-1" r="4">
+              <animateMotion
+                dur="2.4s"
+                begin="0.4s"
+                repeatCount="indefinite"
+                calcMode="spline"
+                keyTimes="0;1"
+                keySplines="0.4 0 0.6 1"
+              >
+                <mpath href="#nc-path-2" />
+              </animateMotion>
+            </circle>
+            <circle class="nc-dot nc-dot-2" r="2.5">
+              <animateMotion
+                dur="2.4s"
+                begin="1.3s"
+                repeatCount="indefinite"
+                calcMode="spline"
+                keyTimes="0;1"
+                keySplines="0.4 0 0.6 1"
+              >
+                <mpath href="#nc-path-2" />
+              </animateMotion>
+            </circle>
+            <defs>
+              <path
+                id="nc-path-2"
+                d="M0,50 C40,50 60,80 80,50 C100,20 120,50 160,50"
+              />
+            </defs>
+          </svg>
 
-            <div class="process-step reveal-up" style="--delay:.3s">
-                <div class="step-circle">
-                    <span class="step-num">03</span>
-                </div>
-                <h3>Launch &amp; Support</h3>
-                <p>We deploy, monitor, and optimise post-launch — ensuring your digital presence keeps performing and growing.</p>
+          <div class="process-step reveal-up" style="--delay: 0.3s">
+            <div class="step-circle">
+              <span class="step-num">03</span>
             </div>
+            <h3>Launch &amp; Support</h3>
+            <p>
+              We deploy, monitor, and optimise post-launch — ensuring your
+              digital presence keeps performing and growing.
+            </p>
+          </div>
         </div>
-        <p class="process-note reveal-up">We've been Delivering the Most Customer Experience Since 2023.</p>
-    </div>
-</section>
+        <p class="process-note reveal-up">
+          We've been Delivering the Most Customer Experience Since 2023.
+        </p>
+      </div>
+    </section>
 
-<!-- ===================== PRICING ===================== -->
-<section class="section-dark" id="pricing">
-    <div class="container">
+    <!-- ===================== PRICING ===================== -->
+    <section class="section-dark" id="pricing">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Pricing Plans</span>
-            <h2>Transparent Pricing For Quality Work</h2>
+          <span class="section-tag">Pricing Plans</span>
+          <h2>Transparent Pricing For Quality Work</h2>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card reveal-up">
-                <h3 class="plan-name">Starter</h3>
-                <div class="plan-price"><span class="plan-curr">R</span><span class="plan-amt">2,500</span></div>
-                <p class="plan-desc">Perfect for small businesses and personal brands getting started online.</p>
-                <ul class="plan-features">
-                    <li><span class="pf-check">✓</span> 5-page responsive website</li>
-                    <li><span class="pf-check">✓</span> Mobile-first design</li>
-                    <li><span class="pf-check">✓</span> Basic SEO setup</li>
-                    <li><span class="pf-check">✓</span> Contact form</li>
-                    <li><span class="pf-check">✓</span> 30-day support</li>
-                    <li><span class="pf-x">✗</span> CMS integration</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-orange btn-full">Get Started</a>
+          <div class="pricing-card reveal-up">
+            <h3 class="plan-name">Starter</h3>
+            <div class="plan-price">
+              <span class="plan-curr">R</span
+              ><span class="plan-amt">3,000</span>
             </div>
-            <div class="pricing-card pricing-popular reveal-up" style="--delay:.1s">
-                <div class="popular-badge">Most Popular</div>
-                <h3 class="plan-name">Professional</h3>
-                <div class="plan-price"><span class="plan-curr">R</span><span class="plan-amt">5,000</span></div>
-                <p class="plan-desc">For growing businesses ready for a premium digital presence.</p>
-                <ul class="plan-features">
-                    <li><span class="pf-check">✓</span> Up to 15 pages</li>
-                    <li><span class="pf-check">✓</span> Custom UI/UX design</li>
-                    <li><span class="pf-check">✓</span> CMS integration</li>
-                    <li><span class="pf-check">✓</span> Performance optimisation</li>
-                    <li><span class="pf-check">✓</span> SEO &amp; analytics</li>
-                    <li><span class="pf-check">✓</span> 60-day support</li>
-                </ul>
-                <a href="#contact" class="btn btn-orange btn-full">Get Started</a>
+            <p class="plan-desc">
+              Perfect for small businesses and personal brands getting started
+              online.
+            </p>
+            <ul class="plan-features">
+              <li><span class="pf-check">✓</span> 5-page responsive website</li>
+              <li><span class="pf-check">✓</span> Mobile-first design</li>
+              <li><span class="pf-check">✓</span> Basic SEO setup</li>
+              <li><span class="pf-check">✓</span> Contact form</li>
+              <li><span class="pf-check">✓</span> 30-day support</li>
+              <li><span class="pf-x">✗</span> CMS integration</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-orange btn-full"
+              >Get Started</a
+            >
+          </div>
+          <div
+            class="pricing-card pricing-popular reveal-up"
+            style="--delay: 0.1s"
+          >
+            <div class="popular-badge">Most Popular</div>
+            <h3 class="plan-name">Professional</h3>
+            <div class="plan-price">
+              <span class="plan-curr">R</span
+              ><span class="plan-amt">5,000</span>
             </div>
-            <div class="pricing-card reveal-up" style="--delay:.2s">
-                <h3 class="plan-name">Enterprise</h3>
-                <div class="plan-price"><span class="plan-curr">R</span><span class="plan-amt">10,000</span><span class="plan-plus">+</span></div>
-                <p class="plan-desc">Full-scale digital solutions for businesses with complex needs.</p>
-                <ul class="plan-features">
-                    <li><span class="pf-check">✓</span> Unlimited pages</li>
-                    <li><span class="pf-check">✓</span> Full-stack development</li>
-                    <li><span class="pf-check">✓</span> API integrations</li>
-                    <li><span class="pf-check">✓</span> E-commerce / custom features</li>
-                    <li><span class="pf-check">✓</span> Priority 24/7 support</li>
-                    <li><span class="pf-check">✓</span> Dedicated project manager</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-orange btn-full">Let's Talk</a>
+            <p class="plan-desc">
+              For growing businesses ready for a premium digital presence.
+            </p>
+            <ul class="plan-features">
+              <li><span class="pf-check">✓</span> Up to 15 pages</li>
+              <li><span class="pf-check">✓</span> Custom UI/UX design</li>
+              <li><span class="pf-check">✓</span> CMS integration</li>
+              <li><span class="pf-check">✓</span> Performance optimisation</li>
+              <li><span class="pf-check">✓</span> SEO &amp; analytics</li>
+              <li><span class="pf-check">✓</span> 60-day support</li>
+            </ul>
+            <a href="#contact" class="btn btn-orange btn-full">Get Started</a>
+          </div>
+          <div class="pricing-card reveal-up" style="--delay: 0.2s">
+            <h3 class="plan-name">Enterprise</h3>
+            <div class="plan-price">
+              <span class="plan-curr">R</span
+              ><span class="plan-amt">10,000</span
+              ><span class="plan-plus">+</span>
             </div>
+            <p class="plan-desc">
+              Full-scale digital solutions for businesses with complex needs.
+            </p>
+            <ul class="plan-features">
+              <li><span class="pf-check">✓</span> Unlimited pages</li>
+              <li><span class="pf-check">✓</span> Full-stack development</li>
+              <li><span class="pf-check">✓</span> API integrations</li>
+              <li>
+                <span class="pf-check">✓</span> E-commerce / custom features
+              </li>
+              <li><span class="pf-check">✓</span> Priority 24/7 support</li>
+              <li><span class="pf-check">✓</span> Dedicated project manager</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-orange btn-full"
+              >Let's Talk</a
+            >
+          </div>
         </div>
 
         <!-- Maintenance add-on -->
         <div class="maintenance-card reveal-up">
-            <div class="maintenance-info">
-                <span class="optional-badge">Optional Add-on</span>
-                <h3 class="maintenance-title">Monthly Maintenance &amp; Support</h3>
-                <p class="maintenance-desc">Keep your website running smoothly with regular updates, security monitoring, content changes, and technical support.</p>
-                <ul class="maintenance-features">
-                    <li><span class="pf-check">✓</span> Regular security updates</li>
-                    <li><span class="pf-check">✓</span> Performance monitoring</li>
-                    <li><span class="pf-check">✓</span> Monthly backup &amp; recovery</li>
-                    <li><span class="pf-check">✓</span> Content updates (up to 2 hours/month)</li>
-                    <li><span class="pf-check">✓</span> Priority email support</li>
-                </ul>
+          <div class="maintenance-info">
+            <span class="optional-badge">Optional Add-on</span>
+            <h3 class="maintenance-title">Monthly Maintenance &amp; Support</h3>
+            <p class="maintenance-desc">
+              Keep your website running smoothly with regular updates, security
+              monitoring, content changes, and technical support.
+            </p>
+            <ul class="maintenance-features">
+              <li><span class="pf-check">✓</span> Regular security updates</li>
+              <li><span class="pf-check">✓</span> Performance monitoring</li>
+              <li>
+                <span class="pf-check">✓</span> Monthly backup &amp; recovery
+              </li>
+              <li>
+                <span class="pf-check">✓</span> Content updates (up to 2
+                hours/month)
+              </li>
+              <li><span class="pf-check">✓</span> Priority email support</li>
+            </ul>
+            <div class="maintenance-addons">
+              <span class="maintenance-addons-label"
+                >Prefer not to commit monthly? Pay per update
+                instead</span
+              >
+              <div class="addon-chips">
+                <span class="addon-chip">1 image — R20</span>
+                <span class="addon-chip">3 images — R60</span>
+                <span class="addon-chip">5 images — R100</span>
+                <span class="addon-chip">10 images — R200</span>
+                <span class="addon-chip">20 images — R400</span>
+              </div>
+              <p class="maintenance-addons-caveat">
+                Minor tweaks (images, text &amp; more) are included in the
+                R200/month plan at no extra cost. New features aren't
+                included in either option &mdash; quoted separately.
+              </p>
             </div>
-            <div class="maintenance-pricing">
-                <div class="plan-price"><span class="maintenance-from">from</span><span class="plan-curr">R</span><span class="plan-amt maintenance-amt">200</span><span class="maintenance-period">/month</span></div>
-                <p class="maintenance-note">Optional add-on to any package</p>
-                <a href="#contact" class="btn btn-iris btn-full">Add Maintenance</a>
+          </div>
+          <div class="maintenance-pricing">
+            <div class="plan-price">
+              <span class="maintenance-from">from</span
+              ><span class="plan-curr">R</span
+              ><span class="plan-amt maintenance-amt">200</span
+              ><span class="maintenance-period">/month</span>
             </div>
+            <p class="maintenance-note">Optional add-on to any package</p>
+            <p class="maintenance-extra">
+              Flat monthly fee &mdash; billed whether or not you need updates
+              that month
+            </p>
+            <p class="maintenance-tc">*Ts&amp;Cs apply</p>
+            <a href="#contact" class="btn btn-iris btn-full">Add Maintenance</a>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== FAQ ===================== -->
-<section class="section-white faq-section">
-    <div class="container">
+    <!-- ===================== FAQ ===================== -->
+    <section class="section-white faq-section">
+      <div class="container">
         <div class="faq-grid">
-            <div class="faq-content reveal-left">
-                <span class="section-tag">FAQ</span>
-                <h2>Most Common <span class="text-orange">Questions?</span></h2>
-                <div class="faq-list" id="faqList">
-                    <div class="faq-item active">
-                        <button class="faq-q">
-                            What services does Webify provide?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-a">
-                            <p>We offer end-to-end digital services including web development, UI/UX design, SEO &amp; digital marketing, performance optimisation, API development, and ongoing maintenance &amp; support.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            What is your typical project timeline?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-a">
-                            <p>We move fast. Most websites go live in 1–2 weeks. Larger custom platforms typically take 3–5 weeks depending on scope — we keep things tight without cutting corners.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            What are the main industries you serve?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-a">
-                            <p>We serve businesses across fintech, e-commerce, healthcare, hospitality, and professional services. Any industry that needs a strong digital presence is a great fit.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q">
-                            Do you offer post-launch support?
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-a">
-                            <p>Yes — all our packages include post-launch support. We also offer a dedicated monthly maintenance plan at R200/month covering updates, security monitoring, and priority support.</p>
-                        </div>
-                    </div>
+          <div class="faq-content reveal-left">
+            <span class="section-tag">FAQ</span>
+            <h2>Most Common <span class="text-orange">Questions?</span></h2>
+            <div class="faq-list" id="faqList">
+              <div class="faq-item active">
+                <button class="faq-q">
+                  What services does Webify provide?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    We offer end-to-end digital services including web
+                    development, UI/UX design, SEO &amp; digital marketing,
+                    performance optimisation, API development, and ongoing
+                    maintenance &amp; support.
+                  </p>
                 </div>
-            </div>
-            <div class="faq-img reveal-right">
-                <img src="img/FAQ/ask.jpg" alt="FAQ" loading="lazy" decoding="async">
-                <div class="faq-img-badge">
-                    <strong>4+</strong>
-                    <span>Years of<br>Excellence</span>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What is your typical project timeline?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    We move fast. Most websites go live in 1–2 weeks. Larger
+                    custom platforms typically take 3–5 weeks depending on scope
+                    — we keep things tight without cutting corners.
+                  </p>
                 </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  What are the main industries you serve?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    We serve businesses across fintech, e-commerce, healthcare,
+                    hospitality, and professional services. Any industry that
+                    needs a strong digital presence is a great fit.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  Do you offer post-launch support?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    Yes — all our packages include post-launch support. We
+                    also offer a dedicated monthly maintenance plan at
+                    R200/month (flat fee, billed whether or not you need
+                    updates that month) covering security monitoring and
+                    priority support. If you'd rather not commit to a flat
+                    monthly fee, you can instead pay per update as needed —
+                    image updates are billed at R20 per image, with bundles
+                    available (e.g. 3 images for R60, 10 images for R200).
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="faq-img reveal-right">
+            <img
+              src="img/FAQ/ask.jpg"
+              alt="FAQ"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="faq-img-badge">
+              <strong>4+</strong>
+              <span>Years of<br />Excellence</span>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== BLOG ===================== -->
-<section class="section-light" id="blog">
-    <div class="container">
+    <!-- ===================== BLOG ===================== -->
+    <section class="section-light" id="blog">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Latest Articles</span>
-            <h2>Explore Blogs &amp; News</h2>
+          <span class="section-tag">Latest Articles</span>
+          <h2>Explore Blogs &amp; News</h2>
         </div>
         <div class="blog-grid" id="blogGrid"></div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== AREAS SERVED ===================== -->
-<section class="section-light" id="areas">
-    <div class="container">
+    <!-- ===================== AREAS SERVED ===================== -->
+    <section class="section-light" id="areas">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Where We Work</span>
-            <h2>Serving Businesses Across Gauteng</h2>
-            <p class="section-desc">Webify Tech Solutions is a Johannesburg-based web development, software development and app development studio. We build websites, custom software, UI/UX design, SEO &amp; digital marketing campaigns, and API integrations for businesses throughout Gauteng, with ongoing website maintenance &amp; support wherever you're based.</p>
+          <span class="section-tag">Where We Work</span>
+          <h2>Serving Businesses Across Gauteng</h2>
+          <p class="section-desc">
+            Webify Tech Solutions is a Johannesburg-based web development,
+            software development and app development studio. We build websites,
+            custom software, UI/UX design, SEO &amp; digital marketing
+            campaigns, and API integrations for businesses throughout Gauteng,
+            with ongoing website maintenance &amp; support wherever you're
+            based.
+          </p>
         </div>
         <div class="area-tags reveal-up">
-            <span class="area-tag">Johannesburg</span>
-            <span class="area-tag">Pretoria</span>
-            <span class="area-tag">Sandton</span>
-            <span class="area-tag">Midrand</span>
-            <span class="area-tag">Centurion</span>
-            <span class="area-tag">Randburg</span>
-            <span class="area-tag">Roodepoort</span>
-            <span class="area-tag">Soweto</span>
-            <span class="area-tag">Benoni</span>
-            <span class="area-tag">Boksburg</span>
-            <span class="area-tag">Germiston</span>
-            <span class="area-tag">Kempton Park</span>
-            <span class="area-tag">Alberton</span>
-            <span class="area-tag">Edenvale</span>
-            <span class="area-tag">Krugersdorp</span>
-            <span class="area-tag">Vereeniging</span>
-            <span class="area-tag">Vanderbijlpark</span>
-            <span class="area-tag">Springs</span>
-            <span class="area-tag">Tembisa</span>
-            <span class="area-tag">Brakpan</span>
+          <span class="area-tag">Johannesburg</span>
+          <span class="area-tag">Pretoria</span>
+          <span class="area-tag">Sandton</span>
+          <span class="area-tag">Midrand</span>
+          <span class="area-tag">Centurion</span>
+          <span class="area-tag">Randburg</span>
+          <span class="area-tag">Roodepoort</span>
+          <span class="area-tag">Soweto</span>
+          <span class="area-tag">Benoni</span>
+          <span class="area-tag">Boksburg</span>
+          <span class="area-tag">Germiston</span>
+          <span class="area-tag">Kempton Park</span>
+          <span class="area-tag">Alberton</span>
+          <span class="area-tag">Edenvale</span>
+          <span class="area-tag">Krugersdorp</span>
+          <span class="area-tag">Vereeniging</span>
+          <span class="area-tag">Vanderbijlpark</span>
+          <span class="area-tag">Springs</span>
+          <span class="area-tag">Tembisa</span>
+          <span class="area-tag">Brakpan</span>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== CONTACT ===================== -->
-<section class="section-white" id="contact">
-    <div class="container">
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section-white" id="contact">
+      <div class="container">
         <div class="section-head center reveal-up">
-            <span class="section-tag">Get In Touch</span>
-            <h2>Let's Start Your <span class="text-orange">Project</span></h2>
+          <span class="section-tag">Get In Touch</span>
+          <h2>Let's Start Your <span class="text-orange">Project</span></h2>
         </div>
         <div class="contact-grid">
-            <div class="contact-info reveal-left">
-                <div class="ci-item">
-                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-                    <div><strong>Email Us</strong><a href="mailto:info@webify.joburg">info@webify.joburg</a></div>
-                </div>
-                <div class="ci-item">
-                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                    <div><strong>Call Us</strong><a href="tel:+27781219516">+27 781 219 516</a></div>
-                </div>
-                <div class="ci-item">
-                    <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                    <div><strong>Location</strong><span>Johannesburg, South Africa</span></div>
-                </div>
-                <div class="contact-avail">
-                    <span class="avail-dot"></span> Currently available for new projects
-                </div>
+          <div class="contact-info reveal-left">
+            <div class="ci-item">
+              <div class="ci-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <strong>Email Us</strong
+                ><a href="mailto:info@webify.joburg">info@webify.joburg</a>
+              </div>
             </div>
-            <form class="contact-form reveal-right" id="contactForm" action="/api/contact" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" name="email" placeholder="name@company.com" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Service</label>
-                    <select name="service">
-                        <option value="">Select a service...</option>
-                        <option>Web Development</option>
-                        <option>UI/UX Design</option>
-                        <option>SEO &amp; Marketing</option>
-                        <option>App Development</option>
-                        <option>API Development</option>
-                        <option>Maintenance &amp; Support</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="5" placeholder="Describe your project..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-iris btn-full">
-                    <span class="btn-txt">Send Message</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
-                </button>
-                <div class="form-ok" id="formOk">✓ Message sent! We'll reply within 24 hours.</div>
-            </form>
+            <div class="ci-item">
+              <div class="ci-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <strong>Call Us</strong
+                ><a href="tel:+27781219516">+27 781 219 516</a>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <strong>Location</strong><span>Johannesburg, South Africa</span>
+              </div>
+            </div>
+            <div class="contact-avail">
+              <span class="avail-dot"></span> Currently available for new
+              projects
+            </div>
+          </div>
+          <form
+            class="contact-form reveal-right"
+            id="contactForm"
+            action="/api/contact"
+            method="POST"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Service</label>
+              <select name="service">
+                <option value="">Select a service...</option>
+                <option>Web Development</option>
+                <option>UI/UX Design</option>
+                <option>SEO &amp; Marketing</option>
+                <option>App Development</option>
+                <option>API Development</option>
+                <option>Maintenance &amp; Support</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Describe your project..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-iris btn-full">
+              <span class="btn-txt">Send Message</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+            <div class="form-ok" id="formOk">
+              ✓ Message sent! We'll reply within 24 hours.
+            </div>
+          </form>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-    <div class="container">
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container">
         <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#home" class="logo">
-                    <img src="img/Webify/svg/nav.svg" alt="Webify" class="logo-img">
-                </a>
-                <p>Crafting digital experiences that drive results — from Johannesburg to the world.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.213 5.567zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-                </div>
+          <div class="footer-brand">
+            <a href="#home" class="logo">
+              <img src="img/Webify/svg/nav.svg" alt="Webify" class="logo-img" />
+            </a>
+            <p>
+              Crafting digital experiences that drive results — from
+              Johannesburg to the world.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.213 5.567zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                  />
+                  <circle cx="4" cy="4" r="2" /></svg
+              ></a>
             </div>
-            <div class="footer-col">
-                <h4>Useful Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#services">Web Development</a></li>
-                    <li><a href="#services">UI/UX Design</a></li>
-                    <li><a href="#services">SEO &amp; Marketing</a></li>
-                    <li><a href="#services">App Development</a></li>
-                    <li><a href="#services">API Development</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Newsletter</h4>
-                <p class="newsletter-desc">Subscribe to get the latest digital tips and insights delivered to your inbox.</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit" class="btn btn-orange">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
-                    </button>
-                </form>
-            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">UI/UX Design</a></li>
+              <li><a href="#services">SEO &amp; Marketing</a></li>
+              <li><a href="#services">App Development</a></li>
+              <li><a href="#services">API Development</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p class="newsletter-desc">
+              Subscribe to get the latest digital tips and insights delivered to
+              your inbox.
+            </p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn btn-orange">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" />
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="copyrightYear"></span> Webify. All rights reserved.</p>
-            <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+          <p>
+            &copy; <span id="copyrightYear"></span> Webify. All rights reserved.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" aria-modal="true" role="dialog" hidden>
-    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
-    <div class="lightbox-content">
-        <img id="lightboxImg" src="" alt="">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" hidden>
+      <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="" />
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+          ✕
+        </button>
+      </div>
     </div>
-</div>
 
-<script src="js/blog.js"></script>
-<script src="js/main.js"></script>
-</body>
+    <script src="js/blog.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
