@@ -38,7 +38,7 @@ window.addEventListener('scroll', () => {
 
 /* ---- Active nav link on scroll ---- */
 const sections = document.querySelectorAll('section[id], header[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link, .mm-link');
 const io_nav = new IntersectionObserver(entries => {
     entries.forEach(e => {
         if (e.isIntersecting) {
@@ -52,28 +52,37 @@ sections.forEach(s => io_nav.observe(s));
 
 /* ---- Mobile nav toggle ---- */
 const navToggle = document.getElementById('navToggle');
-const navMenu   = document.getElementById('navMenu');
-const spans     = navToggle ? navToggle.querySelectorAll('span') : [];
+const navMenu   = document.getElementById('mobileMenu');
+const mmBackdrop = document.getElementById('mmBackdrop');
+const mmClose    = document.getElementById('mmClose');
 
 function openNav() {
+    mmBackdrop.hidden = false;
+    requestAnimationFrame(() => mmBackdrop.classList.add('show'));
     navMenu.classList.add('open');
-    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-    spans[1].style.opacity   = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+    navMenu.removeAttribute('inert');
+    navMenu.setAttribute('aria-hidden', 'false');
+    navToggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-open');
+    mmClose.focus();
 }
 function closeNav() {
+    if (!navMenu.classList.contains('open')) return;
     navMenu.classList.remove('open');
-    spans[0].style.transform = '';
-    spans[1].style.opacity   = '';
-    spans[2].style.transform = '';
+    navMenu.setAttribute('inert', '');
+    navMenu.setAttribute('aria-hidden', 'true');
+    navToggle.setAttribute('aria-expanded', 'false');
+    mmBackdrop.classList.remove('show');
+    setTimeout(() => { if (!navMenu.classList.contains('open')) mmBackdrop.hidden = true; }, 300);
+    document.body.classList.remove('menu-open');
 }
-if (navToggle) {
-    navToggle.addEventListener('click', () =>
-        navMenu.classList.contains('open') ? closeNav() : openNav()
-    );
-}
-if (navMenu) {
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', openNav);
+    mmClose.addEventListener('click', () => { closeNav(); navToggle.focus(); });
+    mmBackdrop.addEventListener('click', closeNav);
     navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+    window.matchMedia('(min-width: 769px)').addEventListener('change', e => { if (e.matches) closeNav(); });
 }
 
 /* ---- Smooth scroll ---- */
