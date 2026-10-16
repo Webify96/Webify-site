@@ -497,56 +497,89 @@ select {
 }
 .mm-head {
   flex-shrink: 0;
-  padding: 18px 22px 44px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 22px 20px 22px 24px;
   color: #fff;
   background:
     radial-gradient(
-      120% 90% at 100% 0%,
-      rgba(139, 92, 246, 0.38) 0%,
-      rgba(139, 92, 246, 0) 65%
+      90% 140% at 0% 0%,
+      rgba(139, 92, 246, 0.22) 0%,
+      rgba(139, 92, 246, 0) 70%
     ),
-    var(--dark-3);
-  border-bottom: 1px solid var(--iris-subtle3);
-  border-radius: 0 0 50% 50% / 0 0 28px 28px;
+    linear-gradient(180deg, #1c1c28 0%, var(--dark-2) 100%);
+}
+/* oversized, faded globe as a watermark */
+.mm-head::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -34px;
+  right: -78px;
+  width: 190px;
+  height: 190px;
+  background: url("../img/Webify/svg/mark.svg") center / contain no-repeat;
+  opacity: 0.07;
+  transform: rotate(-12deg);
+}
+/* fading iris hairline */
+.mm-head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(167, 139, 250, 0) 0%,
+    rgba(167, 139, 250, 0.7) 50%,
+    rgba(167, 139, 250, 0) 100%
+  );
 }
 .mm-head-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
 }
 .mm-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .mm-logo img {
   display: block;
-  height: 46px;
-  width: 46px;
+  height: 44px;
+  width: 44px;
+  filter: drop-shadow(0 0 14px rgba(139, 92, 246, 0.55));
 }
 .mm-wordmark {
   font-family: var(--font-h);
-  font-size: 1.7rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.045em;
   line-height: 1;
   color: #fff;
 }
 .mm-wordmark span {
-  color: #b8b8c4;
+  color: var(--iris-l);
 }
 .mm-close {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  transition: background 0.2s;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
 .mm-close:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(167, 139, 250, 0.5);
 }
 .mm-close svg {
   width: 18px;
@@ -555,21 +588,6 @@ select {
   stroke: #fff;
   stroke-width: 2;
   stroke-linecap: round;
-}
-.mm-eyebrow {
-  font-family: var(--font-h);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--iris-l);
-}
-.mm-tagline {
-  margin-top: 4px;
-  font-family: var(--font-h);
-  font-size: 1.15rem;
-  font-weight: 600;
-  line-height: 1.35;
 }
 .mm-body {
   flex: 1;
